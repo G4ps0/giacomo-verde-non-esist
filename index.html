@@ -119,7 +119,8 @@
     </section>
 
     <!-- Articolo per MyMovies (testo completo) -->
-    <section id="articolo-mm" class="section bg-black" style="display:none;">
+    <section id="articolo-mm" class="section bg-black dynamic-card" style="display:none;">
+  <button class="close-btn" onclick="closeDynamicCard()">Torna al sito</button>
         <div class="container">
             <h2 class="section-title">Articolo per MyMovies</h2>
             <div class="note-content">
@@ -141,7 +142,8 @@
     </section>
 
     <!-- Note di Regia (solo se cliccato) -->
-    <section id="note-regia" class="section bg-black" style="display:none;">
+    <section id="note-regia" class="section bg-black dynamic-card" style="display:none;">
+  <button class="close-btn" onclick="closeDynamicCard()">Torna al sito</button>
         <div class="container">
             <h2 class="section-title">Note di Regia</h2>
             <div class="note-content">
@@ -173,29 +175,35 @@
         <div class="container">
             <p>&copy; 2025 Giacomo Verde non Esiste - Regia di Gioele Gallo</p>
             <p>Contatti: <a href="mailto:info@giacomoverdenonesiste.it">info@giacomoverdenonesiste.it</a></p>
-            <p style="margin-top:12px;font-size:0.9rem;color:var(--green);font-family:'Inter',sans-serif;text-align:center;">
-  sito a cura di <span style="font-family:'Inter', 'Montserrat', Arial, sans-serif;font-size:0.98rem;letter-spacing:0.13em;font-weight:600;text-transform:uppercase;">LORENZO VECCHIO</span>
+            <p style="margin-top:4px;font-size:0.55rem;color:var(--green);font-family:'Inter',sans-serif;text-align:center;letter-spacing:0.07em;">
+  sito a cura di <span style="font-family:'Inter', Arial, sans-serif;font-size:0.6rem;font-weight:600;text-transform:uppercase;">LORENZO VECCHIO</span>
 </p>
         </div>
     </footer>
 
     <script src="js/main.js"></script>
     <script>
-    // Mostra le sezioni articolo-mm e note-regia solo se presente nell'URL
+    function closeDynamicCard() {
+      history.pushState('', document.title, window.location.pathname + window.location.search);
+      showDynamicSections();
+    }
+    // Mostra solo la sezione dinamica e nasconde il resto
     function showDynamicSections() {
       const artSection = document.getElementById('articolo-mm');
       const noteSection = document.getElementById('note-regia');
+      const mainSections = document.querySelectorAll('header, .hero, #sinossi, #cast, #galleria, #articoli, footer');
       if (window.location.hash === '#articolo-mm' && artSection) {
         artSection.style.display = 'block';
         if(noteSection) noteSection.style.display = 'none';
-        artSection.scrollIntoView({behavior: 'smooth'});
+        mainSections.forEach(el => el.style.display = 'none');
       } else if (window.location.hash === '#note-regia' && noteSection) {
         noteSection.style.display = 'block';
         if(artSection) artSection.style.display = 'none';
-        noteSection.scrollIntoView({behavior: 'smooth'});
+        mainSections.forEach(el => el.style.display = 'none');
       } else {
         if(artSection) artSection.style.display = 'none';
         if(noteSection) noteSection.style.display = 'none';
+        mainSections.forEach(el => el.style.display = '');
       }
     }
     window.addEventListener('DOMContentLoaded', showDynamicSections);
