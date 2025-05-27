@@ -161,6 +161,23 @@ header {
 }
 
 /* Hero Section */
+.hero-non {
+  font-size: 2.5em;
+  font-weight: 900;
+  color: var(--green, #00ff77);
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2em;
+  }
+  .hero-non {
+    font-size: 1.5em;
+  }
+}
 .hero {
   position: relative;
   min-height: 100vh;

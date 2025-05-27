@@ -1,7 +1,7 @@
 // Dati del cast
 const castData = [
   { role: "Attore", name: "Leonardo Nenna" },
-  { role: "Soggetto e sceneggiatura", name: "Gioele Gallo" },
+  { role: "Soggetto e sceneggiatura", name: "Gioele Gallo, Giovanni Vecchio" },
   { role: "Regia", name: "Gioele Gallo" },
   { role: "Intervistati", name: "Anna Maria Monteverdi, Guido Segni, Tommaso Verde, Sandra Lischi" },
   { role: "Fotografia", name: "Giacomo Tieghi" },
@@ -14,8 +14,7 @@ const castData = [
   { role: "Fonici di presa diretta", name: "Nicolas Micheletti, Gioele Gallo" },
   { role: "Color correction", name: "Andrea Vignali, Gioele Gallo" },
   { role: "Artwork", name: "Matteo Spinapolice" },
-  { role: "Produzione", name: "Gioele Gallo, Nicolas Micheletti" },
-  { role: "Produzione", name: "Giovanni Vecchio" },
+  { role: "Produzione", name: "Gioele Gallo, Nicolas Micheletti, Giovanni Vecchio" },
 ];
 
 // Dati degli articoli
@@ -30,11 +29,7 @@ const articlesData = [
     url: "https://www.annamonteverdi.it/digital/intervista-a-gioele-gallo-regista-del-film-doc-gvne-giacomo-verde-non-esiste/",
     description: "Intervista approfondita al regista Gioele Gallo",
   },
-  {
-    title: "Articolo per MyMovies",
-    url: "#articolo-mm",
-    description: "Apri l'articolo completo",
-  },
+
 ];
 
 // Immagini della galleria
