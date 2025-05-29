@@ -36,57 +36,7 @@ body {
   font-family: "Inter", system-ui, sans-serif;
 }
 
-/* Bottoni YouTube Mi Piace e Commenta */
-.yt-actions-row {
-  display: flex;
-  gap: 16px;
-  margin-top: 50px;
-  justify-content: flex-start;
-}
-.yt-btn-icon {
-  background: #111e14;
-  border: 1.5px solid var(--green);
-  outline: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 7px 13px;
-  border-radius: 50%;
-  box-shadow: 0 0 6px 1px #00ff4140;
-  text-decoration: none;
-  color: var(--green);
-  font-size: 1.1em;
-  transition: box-shadow 0.2s, background 0.2s, color 0.2s;
-}
-.yt-btn-icon:hover, .yt-btn-icon:focus {
-  background: #00ff4140;
-  color: #111;
-  box-shadow: 0 0 14px 3px #00ff41cc;
-}
-.yt-btn-icon .yt-icon {
-  font-size: 1.3em;
-  filter: drop-shadow(0 0 3px #00ff41cc);
-  transition: filter 0.2s;
-}
-@media (max-width: 600px) {
-  .yt-actions-row {
-    justify-content: center;
-    gap: 28px;
-    margin-top: 36px;
-  }
-  .yt-btn-icon {
-    padding: 12px 14px;
-    font-size: 1.15em;
-    border-radius: 50%;
-    min-width: 48px;
-    min-height: 48px;
-  }
-  .yt-btn-icon .yt-icon {
-    font-size: 1.35em;
-  }
-}
-/* Fine bottoni YouTube */
+
 .yt-btn {
   background: #111e14;
   border: 2px solid var(--green);
